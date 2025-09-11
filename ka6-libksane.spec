@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.0
+%define		kdeappsver	25.08.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka6-%{kaname}
-Version:	25.08.0
+Version:	25.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	13bfc56da6e3b2cbc7d94e3d4b3a0f36
+# Source0-md5:	332a818662d696b8fc0eb74b017dc666
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel
 BuildRequires:	Qt6Gui-devel >= 5.12.3
@@ -33,6 +33,7 @@ BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Conflicts:	kde4-libksane >= 4.0
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
