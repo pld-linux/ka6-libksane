@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libksane
 Summary:	libksane
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	de149996243e1281360d16a2380e1134
+# Source0-md5:	67f4530ef0c36ff85bf0bb3d3074f7be
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel
 BuildRequires:	Qt6Gui-devel >= 5.12.3
@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %{_iconsdir}/hicolor/*x*/actions/*.png
-%attr(755,root,root) %{_libdir}/libKSaneWidgets6.so.*.*
+%{_libdir}/libKSaneWidgets6.so.*.*
 %ghost %{_libdir}/libKSaneWidgets6.so.6
 
 %files devel
